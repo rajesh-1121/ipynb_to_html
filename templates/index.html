@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPYNB to HTML Converter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            width: 50%;
+            margin: 100px auto;
+        }
+        button {
+            background-color: #4b4b7c;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #3a3a6b;
+        }
+        /* Top right corner for stats */
+        .stats {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background-color: rgba(219, 219, 219, 0.7);
+            color: rgb(0, 0, 0);
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="stats">
+        <p>Page Visits: {{ visit_count }}</p>
+        <p>Files Converted: {{ conversion_count }}</p>
+    </div>
+
+    <div class="container">
+        <h1>Convert IPYNB to HTML</h1>
+        <form action="/convert" method="POST" enctype="multipart/form-data">
+            <input type="file" name="file" required>
+            <button type="submit">Convert</button>
+        </form>
+    </div>
+</body>
+</html>
